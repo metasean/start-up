@@ -47,7 +47,7 @@ function toDo() {
                cloud location it is an open location. To avoid using the same
                key as someone else, you'll want to ensure your key is unique.
             */
-            .get('cloud/hosted/todo/app/for/' + username + 'uniqueid')
+            .get('cloud/hosted/todo/app/for/' + username + '/todo/items')
             /* The `.set()` command will not be needed in gun version 0.3.0,
                but for versions prior to 0.3.0 (including the packaged 0.2.5),
                it is necessary to explicitly tell gun what to do if there is 
@@ -59,17 +59,17 @@ function toDo() {
   /* We're going to keep constant watch for any submissions 
      (e.g. 'on' events) to the 'todos' form 
   */
-	$('span.todos form').on('submit', function(event){
+  $('span.todos form').on('submit', function(event){
     /* Unlike a traditional form, we do NOT want to refresh the page,
        so we need to prevent the default event behavior */
-		event.preventDefault();
+    event.preventDefault();
     /* We need to take the input value and add it (e.g. set) to our gun node 
     */
-		gun.set($('span.todos input[type="text"]').val());
+    gun.set($('span.todos input[type="text"]').val());
     /* Once the input value is saved, we need to reset the input field 
     */
- 	  $('span.todos input[type="text"]').val("");
-	});
+    $('span.todos input[type="text"]').val("");
+  });
   
   /* We're also going to keep constant watch on our gun node.
      Whenever there is a change, we're going to iterate over all sub-nodes
@@ -79,7 +79,7 @@ function toDo() {
     /*  Using jquery, we're going to get *or* create a list item node for each
         node
     */
-  	var li = $('span.todos #' + id).get(0) || $('<li>')
+    var li = $('span.todos #' + id).get(0) || $('<li>')
              /* We're going to add the corresponding gun node's id as the list
                 item's id
              */
@@ -114,7 +114,7 @@ function toDo() {
     }
 
     /* if a node's thought is not empty or null */
-  	if(thought){
+    if(thought){
       /* we'll append the previously created checkbox to the list item */
       $(li).append(checkbox); // add a checkbox
       /* and we'll also append a label that it */ 
@@ -126,10 +126,10 @@ function toDo() {
       /* ⇓↓⇓↓⇓ alternatively, we could simply make the label clickable ⇓↓⇓↓⇓ */
       // $(li).append($('<label>').text(thought).prepend('<input type="checkbox">'));
     /* if the node's value is empty, null, or otherwise non-existent */
-  	} else {  
+    } else {  
       /* then we won't show the list item at all */
-  		$(li).hide();
-  	}
+      $(li).hide();
+    }
   });
 }
 

@@ -37,7 +37,9 @@ The index.html page can be viewed as is in a web browser, but to be used as a de
     d. "Options"  
 3. Set the Redirect URL value to your index.html page  
 
+# Use from gh-pages
 
+If you're minimally comfortable with git, commit your code on the 'gh-branch' (e.g. `git checkout -b gh-pages`), then you can access it from http(s)://\<username\>.github.io/\<projectname\> (e.g. https://MetaSean.github.io/start-up).
 
 
 # Customizing Your Start Page
@@ -92,21 +94,21 @@ The last thing this means is that you can't ever "delete" data (it's a constrain
 1. There needs to be a toDo function to encapsulate related functionality.
 2. The startUp.config.user name will be used several times, so assign it to a variable
 3. The toDo function needs:  
-	 a. a connection to a Gun peer (https://github.com/amark/gun/wiki/JS-API#gun)  
-	 b. a connection to a specific node on that peer (https://github.com/amark/gun/wiki/JS-API#get)  
-	 c. an empty set if there isn't already data on that node (https://github.com/amark/gun/wiki/JS-API#set)  
-	See also: http://gun.js.org/think.html
+   a. a connection to a Gun peer (https://github.com/amark/gun/wiki/JS-API#gun)  
+   b. a connection to a specific node on that peer (https://github.com/amark/gun/wiki/JS-API#get)  
+   c. an empty set if there isn't already data on that node (https://github.com/amark/gun/wiki/JS-API#set)  
+  See also: http://gun.js.org/think.html
 4. The 'span.todos form' needs to be watched for 'on' events.  When the form is submitted:  
-	a. You do NOT want to refresh the page, so prevent the default event behavior (http://api.jquery.com/event.preventDefault/)  
-	b. Take the input value and add it (e.g. set) to our gun node (http://api.jquery.com/val/ & https://github.com/amark/gun/wiki/JS-API#set)  
-	c. Reset the input's value (http://api.jquery.com/val/)
+  a. You do NOT want to refresh the page, so prevent the default event behavior (http://api.jquery.com/event.preventDefault/)  
+  b. Take the input value and add it (e.g. set) to our gun node (http://api.jquery.com/val/ & https://github.com/amark/gun/wiki/JS-API#set)  
+  c. Reset the input's value (http://api.jquery.com/val/)
 5. Keep constant watch on your gun node. Whenever there is a change, iterate over all sub-nodes and process them (https://github.com/amark/gun/wiki/JS-API#map & https://github.com/amark/gun/wiki/JS-API#val).  For each change:  
   a. Use jquery to get *or* create a list item node for each of the gun todo nodes   
     1. Give it the id of the corresponding gun node (http://api.jquery.com/attr/)  
     2. Add the list item to the end of the unordered list (http://api.jquery.com/appendTo/)  
   b. Also create a checkbox for each of the gun todo nodes   
-  	1. Give it the id of the corresponding gun node  
-  	2. When the checkbox is changed, have it trigger a 'hideCheckbox' function which takes the checkbox's event data (http://api.jquery.com/change/)  
+    1. Give it the id of the corresponding gun node  
+    2. When the checkbox is changed, have it trigger a 'hideCheckbox' function which takes the checkbox's event data (http://api.jquery.com/change/)  
   C. Create the hideCheckbox function  
     1. If the checkbox was checked  
       a. Set the corresponding gun node's value to `null` (https://github.com/amark/gun/wiki/JS-API#put)  
@@ -117,7 +119,7 @@ The last thing this means is that you can't ever "delete" data (it's a constrain
       a. Set its 'for' attribute to the node's id  
       b. Set its 'text' to the node's value (http://api.jquery.com/text/)  
   e. If the gun node's value does not exist  
-  	1. Hide the entire list item  
+    1. Hide the entire list item  
 6. Don't forget to invoke the toDo function ;-)
 
 
@@ -134,9 +136,9 @@ The last thing this means is that you can't ever "delete" data (it's a constrain
  - http://lifehacker.com/5731409/the-sands-of-time-desktop / http://k3ttc4r.deviantart.com/art/startpage-rwrt-upd8-2011-04-18-105703135
 
  - Chrome's 
-	 - Momentum - https://chrome.google.com/webstore/detail/momentum/laookkfknpbbblfpciffpaejjkokdgca
+   - Momentum - https://chrome.google.com/webstore/detail/momentum/laookkfknpbbblfpciffpaejjkokdgca
 
-	 - Start - https://chrome.google.com/webstore/detail/start-a-better-new-tab/kgifkabikplflflabkllnpidlbjjpgbp
+   - Start - https://chrome.google.com/webstore/detail/start-a-better-new-tab/kgifkabikplflflabkllnpidlbjjpgbp
 
 
 

@@ -39,7 +39,7 @@ The index.html page can be viewed as is in a web browser, but to be used as a de
 
 # Use from gh-pages
 
-If you're minimally comfortable with git, commit your code on the 'gh-branch' (e.g. `git checkout -b gh-pages`), then you can access it from http(s)://\<username\>.github.io/\<projectname\> (e.g. https://MetaSean.github.io/start-up).
+If you're minimally comfortable with git, push your code to the 'gh-branch' (e.g. `git checkout -b gh-pages`, `git add .`, `git commit`, `git push origin gh-pages:gh-pages`), then you can access it from http(s)://\<username\>.github.io/\<projectname\> (e.g. https://MetaSean.github.io/start-up).
 
 
 # Customizing Your Start Page

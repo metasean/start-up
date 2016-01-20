@@ -1,0 +1,175 @@
+/*
+    Layout.css handles most aspects of style.  
+    Typography.css handles all aspects of type and font,
+      *except* color.  This includes alignment, spacing, etc.
+    Colors are in their own stylesheet.
+    
+    generally useful links:
+    https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+    http://howtocenterincss.com/#contentType=div&horizontal=center&vertical=middle&browser.IE=none
+    https://css-tricks.com/the-css-overflow-property/
+    https://css-tricks.com/pseudo-element-roundup/
+    http://code.tutsplus.com/tutorials/the-30-css-selectors-you-must-memorize--net-16048
+    http://www.cheetyr.com/css-selectors
+*/
+
+/*******************************************************************************
+    OVERALL PAGE
+*******************************************************************************/
+
+html {
+	/* Basic background: http://learnlayout.com/box-sizing.html;
+		 Universal Box Sizing with Inheritance: https://css-tricks.com/box-sizing/
+		 related; but does not impact this layout: 
+		  	https://css-tricks.com/transparent-borders-with-background-clip/ */
+	-webkit-box-sizing: border-box; 
+	-moz-box-sizing: border-box;		
+	box-sizing: border-box; 
+}
+*, *:before, *:after {
+	-webkit-box-sizing: inherit;
+	-moz-box-sizing: inherit;
+	box-sizing: inherit;
+}
+html, body {
+	border: 0;
+	margin: 0;
+	padding: 0;
+	font-size: 100%;
+}
+body {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: center;
+	height: 100vh;
+	width: 100vw;
+	min-width: 45em;
+	min-height: 35em;
+	overflow: hidden;
+}
+.text {
+	height: 40vh;
+	display: inline-flex;
+	flex-direction: row;
+	box-sizing: inherit;
+	align-content: stretch;
+	min-height: 60vh;
+}
+.text, .graphic, .stats, .wisdom, .todos {
+	flex: 1 1;
+}
+.stats, .wisdom, .todos {
+	padding: 0em;
+	margin: 0em;
+}
+
+
+
+/*******************************************************************************
+    STATS BLOCK
+*******************************************************************************/
+.stats {
+	width: calc(100% - 1em); /* https://css-tricks.com/a-couple-of-use-cases-for-calc/ */
+	font-size: 0.75em;
+}
+#date, #clock {
+	display: inline-block;
+	text-align: center;
+	width: 100%;
+	border: 0;
+	margin: 0 auto;
+}
+
+.stats iframe {
+  width:100%;
+}
+
+
+
+/*******************************************************************************
+    WISDOM BLOCK
+*******************************************************************************/
+.wisdom {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-content: stretch;
+	align-items: center;
+	text-align: center;
+	padding: 0.5em;
+}
+.quote {
+	margin: 0;
+	padding: 0;
+}
+.invert {
+	flex-basis: 0 0;
+}
+
+
+
+/*******************************************************************************
+    TODOS BLOCK
+*******************************************************************************/
+.todos {
+}
+
+ul#todo {
+  height: calc(100% - 6em); /* https://css-tricks.com/a-couple-of-use-cases-for-calc/ */
+  overflow: auto;
+}
+
+
+
+/*******************************************************************************
+    GRAPHICS BLOCK
+*******************************************************************************/
+.graphic {
+	max-height:40%;
+	position:relative;
+}
+img { /* possible alternative: http://addedoptimization.com/css-styling-image-height-and-width-while-maintaining-aspect-ratio/ */
+	height: 40vh; /* chrome is sorta okay with */
+	max-height: 100%;  /* firefox loves; does squat in chrome 
+	                      https://css-tricks.com/crop-top/ */
+	width: 100vw;
+	object-fit: cover; /* https://css-tricks.com/almanac/properties/o/object-fit/ 
+	                      http://codepen.io/robinrendle/pen/BywNVX */
+	object-position: 50% 60%; /* https://css-tricks.com/almanac/properties/o/object-position/
+	                             http://codepen.io/robinrendle/pen/raGOOJ?editors=110 */
+}
+.graphic:after{ /* http://stackoverflow.com/a/19037318 */
+	content: "";
+	position: absolute;
+	top:0; bottom:0; left:0; right:0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

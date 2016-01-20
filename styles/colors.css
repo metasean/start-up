@@ -1,0 +1,107 @@
+/*
+    Colors.css is solely to handle different color palettes.
+    All other style elements are in layout.css or typography.css.
+    
+    Tools to generate color palettes based on images:
+     - http://palettefx.com/
+     - http://www.pictaculous.com/
+     - http://www.cssdrive.com/imagepalette/index.php
+*/
+
+
+/*******************************************************************************
+    OVERALL PAGE
+*******************************************************************************/
+
+body {
+	color: #E0E0E0;
+	background-color: #47342B;
+}
+.stats, .wisdom, .todos {
+	border: 3px solid #301712;
+	opacity: 25%;
+}
+.wisdom, .todos {
+  border-left: 0;
+}
+
+
+
+/*******************************************************************************
+    STATS BLOCK
+*******************************************************************************/
+.stats {
+}
+#date {
+	color: #ddcccc;
+}
+#clock {
+}
+
+
+
+/*******************************************************************************
+    WISDOM BLOCK
+*******************************************************************************/
+.wisdom {
+	background-color: #d7cbc7;
+	color: #47342B;
+}
+.invert {
+	background-color: #47342B;
+	color: #e0e0e0;
+}
+
+
+
+/*******************************************************************************
+    TODOS BLOCK
+*******************************************************************************/
+.todos {
+}
+span.todos form input {
+  color: #DFDFDD;
+}
+
+
+/*******************************************************************************
+    GRAPHICS BLOCK
+*******************************************************************************/
+.graphic {
+}
+.graphic:after{
+  /* why `graphic:after`? - http://stackoverflow.com/a/19037318 */
+  /* hex-t-rgb converter http://www.javascripter.net/faq/hextorgb.htm */
+  border-top: 5px solid #301712; /* fallback */
+	border-top: 5px solid rgba(48, 23, 18, .75);
+  /* border-top: 50px solid #301712;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

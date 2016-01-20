@@ -1,0 +1,200 @@
+/* NOTE
+
+  GOOGLE FONTS LINK
+  - drastically increases how long it takes to load the page
+  - therefore, I recommend installing the zip of fonts and installing locally
+  - there is a font.zip in the styles directory with the fonts
+  - the font `link` on index.html is only needed if fonts aren't available locally
+  - to see other avilable google fonts, visit https://www.google.com/fonts
+*/
+
+/*
+    Inspiration from:
+      http://rafaltomal.com/5-ideas-to-design-amazing-hero-banner-typography/
+      http://dailyquotes.co/shop/
+      http://tympanus.net/codrops/2011/10/08/25-examples-of-emphasis-applied-in-web-design/
+      http://inspirationfeed.com/inspiration/typography-inspiration/40-remarkable-examples-of-typography-design-8/
+      http://desgr.com/21-beautiful-examples-of-typography-in-web-design-for-your-inspiration/
+      http://www.webdesign.org/web-design-basics/web-typography/page-1.html
+      
+    Viewport, Media Queries and Responsive Design:
+      https://css-tricks.com/viewport-sized-typography/
+      http://generatedcontent.org/post/21279324555/viewportunits
+      http://mediaqueri.es/
+      https://www.filamentgroup.com/lab/on-ems-and-rems.html
+      
+*/
+
+
+/*******************************************************************************
+    OVERALL PAGE
+*******************************************************************************/
+
+html, body {
+/*   font-size: 100%; */
+font-size: 1vmin;
+}
+.text {
+/*   font-size: 3.5vmin; */
+font-size: 3.5em;
+	border-bottom: 5px solid #301712;
+}
+
+/* 
+   HORIZONTAL RULE
+   https://css-tricks.com/examples/hrs/ 
+   http://konigi.com/tools/css-techniques-horizontal-rules/
+   http://www.syntaxxx.com/how-to-style-hr-with-css/
+*/
+.hr {
+	text-align: center;
+	height: 1px;
+	padding: 0 auto;
+	margin: 0;
+	margin-top: 0.25em;
+	border: 0 solid transparent;
+	background: transparent;
+	font-weight: 100;
+	font-family: "Goudy Old Style","Batang", "Didot", "Baskerville";
+}
+
+
+
+/*******************************************************************************
+    STATS BLOCK
+*******************************************************************************/
+.stats {
+}
+
+#date {
+	font-family: "Herculanum", "Eurostile", "Eurasia";
+	font-size: 1.0em;
+	letter-spacing: 0.37em;
+	padding: 0.5em 0.5em 0 0.5em;
+}
+
+#clock {
+	font-family: "Futura", "Gulim", "Eurostile", "Eurasia";
+	font-size: 1.0em;
+	font-weight: 900;
+	letter-spacing: 0.5em;
+	padding: 0.2em 0.5em 0.2em 0.5em;
+}
+
+#clock + .hr { /* https://css-tricks.com/child-and-sibling-selectors/ */
+	padding: 0 0.5em;
+	letter-spacing: 0.37em;
+  margin-bottom: 1.5em;
+}
+
+
+
+/*******************************************************************************
+    WISDOM BLOCK
+*******************************************************************************/
+.wisdom {
+  font-size: 1em;
+}
+.quote {
+	text-align: center;
+	font-variant: small-caps;
+}
+.plain {
+	font-family: 'Special Elite', cursive;
+	font-size: 0.8em;
+}
+.emphasis {
+	font-family: 'Poller One', cursive;
+	font-size: 1.15em;
+	margin: -0.2em 0 0 0;
+}
+.sub-emphasis {
+  font-family: 'IM Fell English', serif;
+  font-size: 1.25em;
+  font-style: italic;
+  font-weight: 700;
+}
+.invert {
+	/* font-family: 'Coustard', cursive; */
+	padding: 0 0.4em;
+	margin: 0.1em 0 0.2em 0; 
+}
+.author {
+	font-size: 0.65em;
+	margin-top: 0.5em;
+}
+.author::before, .author::after { /* https://css-tricks.com/almanac/selectors/a/after-and-before/ */
+	content: " ~ "; /* https://css-tricks.com/css-content/ */
+}
+
+
+/*******************************************************************************
+    TODOS BLOCK
+*******************************************************************************/
+.todos {
+}
+
+span.todos {
+  width: 100%;
+  height: 100%;
+  font-family: 'Short Stack', cursive;
+  font-size: 0.5em;
+}
+
+span.todos h1 {
+  font-family: 'Walter Turncoat', cursive;
+  text-align: center;
+  font-size: 1.5em;
+  margin: 0 auto;
+  padding: 0.1em 0.25em;
+}
+
+span.todos .hr {
+  line-height: 0.85; 
+	text-align: center;
+	font-weight: 100;
+  font-size: 2.0em;
+}
+
+span.todos ul#todo {
+  margin: 0.25em;
+  margin-top: 1em;
+  padding: 0 1.25em;
+}
+
+ul#todo li {
+  list-style: none;
+  margin-left: 0;
+  margin-bottom: 0.25em;
+  padding-left: 1em;
+  text-indent: -1.25em;
+}
+
+span.todos form input {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 1.25em;
+  bottom: 0;
+  background-color: transparent;
+  border: transparent;
+  font-family: 'Short Stack', cursive;
+  font-size: 1em;
+}
+
+
+
+/*******************************************************************************
+    GRAPHICS BLOCK
+*******************************************************************************/
+.graphic {
+}
+
+
+
+
+
+
+
+
+
+

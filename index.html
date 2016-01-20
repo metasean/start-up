@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <!-- title is the default title, until the page is loaded and the startUp.config.title can be set as the replacement value -->
+    <title>StartUp</title>
+    <!-- meta tag that sets the viewport values to the current window's size -->
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0" name="viewport" />
+    <!-- meta tag that sets the character set to utf-8 -->
+    <meta charset="utf-8">
+    <!-- link tags that pull in our stylesheets -->
+    <link rel="stylesheet" href="styles/layout.css" />
+    <link rel="stylesheet" href="styles/typography.css" />
+    <link rel="stylesheet" href="styles/colors.css" />
+    <!--
+        INITIAL SCRIPTS
+    -->
+    <!-- jquery is used throughut this page and the toDo.js script -->
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <!-- the anonymous script sets up initial variables -->
+    <script type="text/javascript">
+      var startUp = {
+        /* 
+        The `config` object holds configuration variables.
+        - `clockTimeout` is an initial refresh rate for the clock.js script, which
+          is overwritten once the date and time have been established.
+        - `user` is the name to show in the To Do List header
+        - `title` is the page title and will show up on the browser tab
+        */
+        config: {
+          clockTimeout: 10,
+          user: "SLC JS Learner",
+          title: "Make It So!"
+        }
+      };
+      /* the `$(document).ready` function sets the documents 'title' meta property to the startUp.config.title variable once the document has been loaded. */ 
+      $(document).ready(function() {
+        document.title = startUp.config.title;
+      });
+    </script>
+    <!-- the gun.js script is used in the toDo.js script 
+         - the first version is based off the master branch and WILL CHANGE 
+         - the second version is based off a specific git commit and will not
+           change, but the CDN service may at some point stop serving the file 
+         - the third version is locally served 
+         - if starting a project from scratch, it is recommended that you
+           `npm install gun`
+    -->
+    <!--script src="https://cdn.rawgit.com/amark/gun/master/gun.js"></script-->
+    <!--script src="https://cdn.rawgit.com/amark/gun/3240ab882637643305250873c46cd52b0e7620f4/gun.js"></script-->
+    <script src="lib/gun.js"></script>
+  </head>
+
+  <!-- when the html body is loaded, it automatically places the cursor into (e.g. focuses on) the DuckDuckGo (DDG) search bar. -->
+  <body onload="document.getElementById(DDG).focus();">
+    <div class="text">
+      <span class="stats">
+        <!--
+            DATE & TIME
+            depends on:
+             - clock.js
+        -->
+        <div id="date"></div>
+        <div id="clock"></div>
+        <div class="hr">~~~~~~~~~~</div>
+        <!--
+            SEARCH
+        
+            I left the DDG pretty plain.  More information on modifying it is available at the following sites:
+            basic: https://duckduckgo.com/search_box 
+            customize: http://hardik.org/2013/06/01/stylising-duckduckgo-site-search/ 
+            position? : https://css-tricks.com/float-center/  
+        -->
+        <iframe frameborder="0" name="DDG" style="overflow:hidden;margin:0;padding:0" src="https://duckduckgo.com/search.html?focus=yes"></iframe>
+      </span>
+      <h1 class="wisdom">
+        <!--
+            QUOTE THING
+
+            Two styled quotes are provided below.  Comment out any quotes that aren't being used. There are also a bunch of unstyled quotes in the README file.
+
+            Challenge: 
+            Move your quotes to a JSON file and import a random quote on refresh.
+        -->
+        <!-- 
+              Success means Actively taking Steps Large or Small toward your Desired Goal 
+        -->
+        <span class="quote plain"></span>
+        <span class="quote emphasis invert">Success</span>
+        <span class="quote plain">means</span>
+        <span class="quote emphasis">Actively</span>
+        <span class="quote plain">taking</span>
+        <span class="quote emphasis invert">Steps</span>
+        <span class="quote sub-emphasis">Large or Small</span>
+        <span class="quote plain">toward your</span>
+        <span class="quote emphasis invert">Desired</span>
+        <span class="quote emphasis">Goal</span>
+        <span class="quote author">MetaSean</span>
+        <span class="quote plain"></span>
+
+      <!-- 
+          When I'm Sad I stop being Sad and Start Being Awesome Instead 
+      -->
+<!--           <span class="quote plain">When I'm</span>
+          <span class="quote emphasis">Sad</span>
+          <span class="quote plain">I stop being</span>
+          <span class="quote emphasis">Sad</span>
+          <span class="quote plain">and </span>
+          <span class="quote invert">Start Being</span>
+          <span class="quote invert">Awesome</span>
+          <span class="quote plain">Instead</span>
+          <span class="quote author">Barney Stinson</span>
+          <span class="quote plain"></span> -->
+      </h1>
+      <span class="todos">
+        <!--
+            TO DO LIST
+            depends on:
+             - jquery
+             - gun.js
+             - toDo.js
+        -->
+        <h1></h1>
+        <div class="hr">~~~~~~~~~~</div>
+        <ul id="todo"></ul>
+        <form>
+          <input type="text" placeholder="click to add a new To Do item" />
+        </form>
+      </span>
+    </div>
+    <div class="graphic">
+      <!--
+            IMAGE - can pull from local or remote locations
+        -->
+      <!-- image information available at https://en.wikipedia.org/wiki/Japanese_garden#/media/File:Geppa-ro.jpg -->
+      <!--<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Geppa-ro.jpg/1280px-Geppa-ro.jpg" /-->
+      <img src="images/wikimedia/1024px-Geppa-ro.jpg">
+    </div>
+
+    <!--
+        POST-PAGE LOAD SCRIPTS
+    -->
+    <!--
+
+    GOOGLE FONTS LINK
+    - drastically increases load time
+    - therefore, recommend downloading zip of fonts and installing locally
+    - `link` is only needed if fonts aren't available locally
+    - there is a font.zip in the styles directory with the fonts
+    - to see other avilable google fonts, visit https://www.google.com/fonts
+    -->
+    <link href="https://fonts.googleapis.com/css?family=Special+Elite|Poller+One|Coustard|Walter+Turncoat|Short+Stack|Marck+Script|Playfair+Display:400,700italic,400italic,700,900,900italic|Cantarell:400,400italic,700,700italic|IM+Fell+English:400,400italic|Sonsie+One|Libre+Baskerville:400,400italic,700" type="text/css" rel="stylesheet" />
+
+    <!-- 
+
+    to have the clock correctly load and to have the user name be shown, the following scripts must be called after the clock and time divs and the todos h1 span are declared in the DOM 
+    -->
+    <script src="scripts/clock.js"></script>
+    <script src="scripts/toDo.js"></script>
+  </body>
+
+</html>

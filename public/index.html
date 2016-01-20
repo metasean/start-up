@@ -17,25 +17,12 @@
     -->
     <!-- jquery is used throughout this page and the toDo.js script -->
     <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
-    <!-- the anonymous script sets up initial variables -->
+    <!-- the config script sets up some initial variables -->
+    <script src="scripts/config.js"></script>
     <script type="text/javascript">
-      var startUp = {
-        /* 
-        The `config` object holds configuration variables.
-        - `clockTimeout` is an initial refresh rate for the clock.js script, which
-          is overwritten once the date and time have been established.
-        - `user` is the name to show in the To Do List header
-        - `title` is the page title and will show up on the browser tab
-        */
-        config: {
-          clockTimeout: 10,
-          user: "MetaSean",
-          title: "Think Less ~ Do More"
-        }
-      };
       /* the `$(document).ready` function sets the documents 'title' meta property to the startUp.config.title variable once the document has been loaded. */ 
       $(document).ready(function() {
-        document.title = startUp.config.title;
+        document.title = config.title;
       });
     </script>
     <!-- the gun.js script is used in the toDo.js script 

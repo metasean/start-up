@@ -25,7 +25,7 @@
 
 /* The toDo function controls all aspects of the To Do list's functionality */
 function toDo() {
-  var username = startUp.config.user
+  var username = config.user
 
   /* Instead of using a hard-coded name for the heading, 
      let's use your startUp.config.user name */
@@ -47,7 +47,7 @@ function toDo() {
                cloud location it is an open location. To avoid using the same
                key as someone else, you'll want to ensure your key is unique.
             */
-            .get('cloud/hosted/todo/app/for/' + username + '/todo/items')
+            .get('cloud/hosted/todo/app/for/' + username + config.uniqueid)
             /* The `.set()` command will not be needed in gun version 0.3.0,
                but for versions prior to 0.3.0 (including the packaged 0.2.5),
                it is necessary to explicitly tell gun what to do if there is 

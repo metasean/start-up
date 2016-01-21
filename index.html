@@ -9,16 +9,16 @@
     <!-- meta tag that sets the character set to utf-8 -->
     <meta charset="utf-8">
     <!-- link tags that pull in our stylesheets -->
-    <link rel="stylesheet" href="styles/layout.css" />
-    <link rel="stylesheet" href="styles/typography.css" />
-    <link rel="stylesheet" href="styles/colors.css" />
+    <link rel="stylesheet" href="src/styles/layout.css" />
+    <link rel="stylesheet" href="src/styles/typography.css" />
+    <link rel="stylesheet" href="src/styles/colors.css" />
     <!--
         INITIAL SCRIPTS
     -->
     <!-- jquery is used throughout this page and the toDo.js script -->
     <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
     <!-- the config script sets up some initial variables -->
-    <script src="scripts/config.js"></script>
+    <script src="src/scripts/config.js"></script>
     <script type="text/javascript">
       /* the `$(document).ready` function sets the documents 'title' meta property to the startUp.config.title variable once the document has been loaded. */ 
       $(document).ready(function() {
@@ -35,7 +35,7 @@
     -->
     <!--script src="https://cdn.rawgit.com/amark/gun/master/gun.js"></script-->
     <!--script src="https://cdn.rawgit.com/amark/gun/3240ab882637643305250873c46cd52b0e7620f4/gun.js"></script-->
-    <script src="lib/gun.js"></script>
+    <script src="src/lib/gun.js"></script>
   </head>
 
   <!-- when the html body is loaded, it automatically places the cursor into (e.g. focuses on) the DuckDuckGo (DDG) search bar. -->
@@ -121,7 +121,7 @@
         -->
       <!-- image information available at https://en.wikipedia.org/wiki/Japanese_garden#/media/File:Geppa-ro.jpg -->
       <!--<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Geppa-ro.jpg/1280px-Geppa-ro.jpg" /-->
-      <img src="images/wikimedia/1024px-Geppa-ro.jpg">
+      <img src="src/images/wikimedia/1024px-Geppa-ro.jpg">
     </div>
 
     <!--
@@ -142,8 +142,8 @@
 
     to have the clock correctly load and to have the user name be shown, the following scripts must be called after the clock and time divs and the todos h1 span are declared in the DOM 
     -->
-    <script src="scripts/clock.js"></script>
-    <script src="scripts/toDo.js"></script>
+    <script src="src/scripts/clock.js"></script>
+    <script src="src/scripts/toDo.js"></script>
   </body>
 
 </html>

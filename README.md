@@ -141,6 +141,32 @@ The last thing this means is that you can't ever "delete" data (it's a constrain
    - Start - https://chrome.google.com/webstore/detail/start-a-better-new-tab/kgifkabikplflflabkllnpidlbjjpgbp
 
 
+## Images
+
+https://unsplash.com/ - Free (do whatever you want) high-resolution photos.
+10 new photos every 10 days.
+
+Some that Sean is considering:
+ - https://unsplash.com/photos/Sfn8f32ZIj0
+
+ - https://unsplash.com/photos/awnHOXjsdT4
+ - https://unsplash.com/photos/E9CrQou9K0Y
+
+ - https://unsplash.com/photos/jLwVAUtLOAQ
+
+ - https://unsplash.com/photos/p62O--o1x-U
+ - https://unsplash.com/photos/uivWDK2Ifrg
+ - https://unsplash.com/photos/NbUokuw0BQI
+
+ - https://unsplash.com/photos/cVEfUcl6xCo
+ - https://unsplash.com/photos/CNzh2A9_jwE
+ - https://unsplash.com/photos/Ki0dpxd3LGc
+ - https://unsplash.com/photos/xorjaMB8W70
+ - https://unsplash.com/photos/eOpewngf68w
+ - https://unsplash.com/photos/CoD2Q92UaEg
+ - https://unsplash.com/photos/OWwK_0_EnxY
+ - https://unsplash.com/photos/6LkxufmApSk
+ - https://unsplash.com/photos/lpjb_UMOyx8
 
 ## Quotes
 

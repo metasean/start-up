@@ -7,7 +7,7 @@ var config = {
   - `title` is the page title and will show up on the browser tab
   */
   clockTimeout: 10,
-  user: "MetaSean",
-  uniqueid: "801678",
+  user: "Example User",
+  uniqueid: "unique-id-of-some-sort",
   title: "Think Less ~ Do More"
 };

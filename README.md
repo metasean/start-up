@@ -37,9 +37,18 @@ The index.html page can be viewed as is in a web browser, but to be used as a de
     d. "Options"  
 3. Set the Redirect URL value to your index.html page  
 
-# Use from gh-pages
+# Use from GitLab
 
-If you're minimally comfortable with git, push your code to the 'gh-branch' (e.g. `git checkout -b gh-pages`, `git add .`, `git commit`, `git push origin gh-pages:gh-pages`), then you can access it from http(s)://\<username\>.github.io/\<projectname\> (e.g. https://MetaSean.github.io/start-up).
+You can fork this repo from within GitLab.  
+
+In your forked repo, navigate to Settings -> Variables and add the following two keys with the values you would like:  
+ - START_PAGE_USER
+ - START_PAGE_ID
+
+Then make your modifications, ensuring the 'master' branch is kept up-to-date.
+
+Each time your GitLab repo is updated, the `.gitlab-ci.yml` script will automatically trigger a rebuild.
+
 
 
 # Customizing Your Start Page

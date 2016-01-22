@@ -152,6 +152,18 @@ The last thing this means is that you can't ever "delete" data (it's a constrain
 
 ## Images
 
+https://pexels.com/ - Best free stock photos in one place.
+ - https://www.pexels.com/photo/clock-alarm-clock-clock-pointers-close-up-30641/
+ - https://www.pexels.com/photo/sea-ocean-bridge-cloudy-36365/
+
+http://librestock.com/ - search the best free stock photo websites in one place
+
+http://alana.io/ - Free Stock Photos
+
+http://finda.photo/ - Search through thousands of free (CC0 licensed) stock photos
+
+https://pixabay.com/ - Free images and videos you can use anywhere
+
 https://unsplash.com/ - Free (do whatever you want) high-resolution photos.
 10 new photos every 10 days.
 

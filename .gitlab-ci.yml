@@ -1,10 +1,10 @@
 pages:
   stage: deploy
   script:
+  - export
   - mkdir .public
   - cp -r * .public
   - mv .public public
-  - export
   artifacts:
     paths:
     - public

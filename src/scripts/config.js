@@ -8,7 +8,7 @@ var config = {
   - `title` is the page title and will show up on the browser tab
   */
   clockTimeout: 10,
-  user: typeof $START_PAGE_USER !== 'undefined' ? $START_PAGE_USER : "Example User",
-  uniqueid: typeof $START_PAGE_ID !== 'undefined' ? $START_PAGE_ID : "unique-id-of-some-sort",
+  user: typeof START_PAGE_USER !== 'undefined' ? START_PAGE_USER : "Example User",
+  uniqueid: typeof START_PAGE_ID !== 'undefined' ? START_PAGE_ID : "unique-id-of-some-sort",
   title: "Think Less ~ Do More"
 };

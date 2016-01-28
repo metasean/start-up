@@ -1,8 +1,7 @@
 pages:
   stage: deploy
   script:
-  - export START_PAGE_USER
-  - export $START_PAGE_ID
+  - export 
   - mkdir .public
   - cp -r * .public
   - mv .public public

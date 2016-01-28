@@ -1,10 +1,11 @@
 pages:
   stage: deploy
   script:
+  - echo $START_PAGE_USER
+  - echo $$START_PAGE_ID
   - mkdir .public
   - cp -r * .public
   - mv .public public
-  - export
   artifacts:
     paths:
     - public

@@ -145,12 +145,10 @@
     <script src="src/scripts/clock.js"></script>
     <script src="src/scripts/toDo.js"></script>
     <script>
-      /*
-      console.log(">> 1", process.env.START_PAGE_USER);
-      console.log(">> 2", process.env.START_PAGE_ID);
-      */
-      console.log(">> 3", $START_PAGE_USER);
-      console.log(">> 4", START_PAGE_ID);
+      console.log(typeof process.env.START_PAGE_USER !== 'undefined' ? process.env.START_PAGE_USER : "fail");
+      console.log(typeof process.env.START_PAGE_ID !== 'undefined' ? process.env.START_PAGE_ID : "fail");
+      console.log(typeof $START_PAGE_USER !== 'undefined' ? $START_PAGE_USER : "fail");
+      console.log(typeof START_PAGE_ID !== 'undefined' ? START_PAGE_ID : "fail");
     </script>
   </body>
 

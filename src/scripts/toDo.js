@@ -23,15 +23,15 @@
 */
 
 /* GUN assumes all data is submitted as objects; there is no array support in 
-   gun.  We're going to add todo items to a single object using randomly 
+   gun.  So, we're going to add todo items to a single object using randomly 
    generated keys.  We'll do this by adding a method to gun's prototype chain 
 */
 Gun.chain.set = function (value, cb, opt) {
   // create a random string
-  var random = Gun.text.random();
+  var random_key = Gun.text.random();
 
-  // put the value on that random path
-  return this.path(random).put(value, cb, opt);
+  // put the todo value on that random path
+  return this.path(random_key).put(value, cb, opt);
 };
 
 

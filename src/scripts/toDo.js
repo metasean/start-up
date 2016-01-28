@@ -22,6 +22,18 @@
    The last thing this means is that you can't ever "delete" data (it's a constraint, for better or worse, of all truly distributed data systems.) So, instead of deleting a node, you `null` out it's data.
 */
 
+/* GUN assumes all data is submitted as objects; there is no array support in 
+   gun.  We're going to add todo items to a single object using randomly 
+   generated keys.  We'll do this by adding a method to gun's prototype chain 
+*/
+Gun.chain.set = function (value, cb, opt) {
+  // create a random string
+  var random = Gun.text.random();
+
+  // put the value on that random path
+  return this.path(random).put(value, cb, opt);
+};
+
 
 /* The toDo function controls all aspects of the To Do list's functionality */
 function toDo() {
@@ -54,7 +66,7 @@ function toDo() {
                no initial data at the specified key location.  `set()` tells 
                gun to initial an empty value.
             */
-            .set(); 
+            //.set(); 
 
   /* We're going to keep constant watch for any submissions 
      (e.g. 'on' events) to the 'todos' form 

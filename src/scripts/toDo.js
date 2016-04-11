@@ -50,7 +50,8 @@ function toDo() {
      and in a cloud based location, which allows you to access your items
      across browsers (e.g. your laptop and your phone) 
   */
-  var gun = Gun('https://gunjs.herokuapp.com/gun')
+  // NOTE: Currently this demo is not connected to a gun server, so data is only being saved locally.
+  var gun = Gun()//('https://gunjs.herokuapp.com/gun')
             /* GUN uses a chaining api, so once we've set up our initial 
                Gun peer, we'll want to `.get()` data from a specific key.
                If you're only using localStorage, then you can use a 
@@ -99,7 +100,7 @@ function toDo() {
              /* We're going to add the list item to the end of 
                 (e.g. append it to) the unordered list of to do items 
              */
-             .appendTo('ul');
+             .appendTo('.todos ul');
     /* We're also going to use jquery to create a checkbox for each to do item
     */
     var checkbox = $('<input type="checkbox">')

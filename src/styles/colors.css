@@ -19,10 +19,22 @@ body {
 }
 .stats, .wisdom, .todos {
 	border: 3px solid #301712;
-	opacity: 25%;
 }
 .wisdom, .todos {
   border-left: 0;
+}
+
+a:link {
+  color: #E0E0E0;
+}
+a:visited {
+  color: #817F75;
+}
+a:hover  {
+  color: #B8C480;
+}
+a:active {
+  color: #B8C480;
 }
 
 
@@ -42,6 +54,16 @@ body {
 
 /*******************************************************************************
     WISDOM BLOCK
+
+              CF5C36 - orangish
+              983628 - clayish
+              643a71 - lavenderish
+              294936 - greenish
+              
+              DAA89B - peachish
+              c4a69d - pinkish
+              73683B - monkey puke - goldish
+              313E50 - slate blueish
 *******************************************************************************/
 .wisdom {
 	background-color: #d7cbc7;
@@ -51,6 +73,54 @@ body {
 	background-color: #47342B;
 	color: #e0e0e0;
 }
+.quote:not(.invert).clayish {
+  background-color: #d7cbc7;
+  color: #983628;
+}
+.invert.clayish {
+  background-color: #983628;
+  color: #e0e0e0;
+}
+.quote:not(.invert).redish {
+  background-color: #d7cbc7;
+  color: #8C271E;
+}
+.invert.redish {
+  background-color: #8C271E;
+  color: #e0e0e0;
+}
+.quote:not(.invert).orangish {
+  background-color: #d7cbc7;
+  color: #CF5C36;
+}
+.invert.orangish {
+  background-color: #CF5C36;
+  color: #e0e0e0;
+}
+.quote:not(.invert).lavenderish {
+  background-color: #d7cbc7;
+  color: #643a71;
+}
+.invert.lavenderish {
+  background-color: #643a71;
+  color: #e0e0e0;
+}
+.quote:not(.invert).greenish {
+  background-color: #d7cbc7;
+  color: #294936;
+}
+.invert.greenish {
+  background-color: #294936;
+  color: #e0e0e0;
+}
+.quote:not(.invert).blueish {
+  background-color: #d7cbc7;
+  color: #1C3144;
+}
+.invert.blueish {
+  background-color: #1C3144;
+  color: #e0e0e0;
+}
 
 
 
@@ -58,7 +128,9 @@ body {
     TODOS BLOCK
 *******************************************************************************/
 .todos {
+  color: #d7cbc7;
 }
+
 span.todos form input {
   color: #DFDFDD;
 }
@@ -68,6 +140,7 @@ span.todos form input {
     GRAPHICS BLOCK
 *******************************************************************************/
 .graphic {
+  background-color: #301712;
 }
 .graphic:after{
   /* why `graphic:after`? - http://stackoverflow.com/a/19037318 */

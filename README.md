@@ -43,12 +43,21 @@ The index.html page can be viewed as is in a web browser, but to be used as a de
 
 You can fork this repo from within GitLab or GitHub.  
 
+## GitLab
+
 Then make your modifications, ensuring the 'master' branch is kept up-to-date.
 
 In GitLab, each time your GitLab repo is updated, the `.gitlab-ci.yml` script will automatically trigger a rebuild.
 
 Your customized page will be available at an address following the pattern:
  - http://<username>.gitlab.io/start-up
+
+
+## GitHub
+
+Then make your modifications, ensuring the 'gh-pages' branch is kept up-to-date.
+
+Your customized page will be available at an address following the pattern:
  - http://<username>.github.io/start-up
 
 

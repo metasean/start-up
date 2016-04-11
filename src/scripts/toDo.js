@@ -22,10 +22,22 @@
    The last thing this means is that you can't ever "delete" data (it's a constraint, for better or worse, of all truly distributed data systems.) So, instead of deleting a node, you `null` out it's data.
 */
 
+/* GUN assumes all data is submitted as objects; there is no array support in 
+   gun.  So, we're going to add todo items to a single object using randomly 
+   generated keys.  We'll do this by adding a method to gun's prototype chain 
+*/
+Gun.chain.set = function (value, cb, opt) {
+  // create a random string
+  var random_key = Gun.text.random();
+
+  // put the todo value on that random path
+  return this.path(random_key).put(value, cb, opt);
+};
+
 
 /* The toDo function controls all aspects of the To Do list's functionality */
 function toDo() {
-  var username = startUp.config.user
+  var username = config.user
 
   /* Instead of using a hard-coded name for the heading, 
      let's use your startUp.config.user name */
@@ -38,7 +50,8 @@ function toDo() {
      and in a cloud based location, which allows you to access your items
      across browsers (e.g. your laptop and your phone) 
   */
-  var gun = Gun('https://gunjs.herokuapp.com/gun')
+  // NOTE: Currently this demo is not connected to a gun server, so data is only being saved locally.
+  var gun = Gun()//('https://gunjs.herokuapp.com/gun')
             /* GUN uses a chaining api, so once we've set up our initial 
                Gun peer, we'll want to `.get()` data from a specific key.
                If you're only using localStorage, then you can use a 
@@ -47,14 +60,14 @@ function toDo() {
                cloud location it is an open location. To avoid using the same
                key as someone else, you'll want to ensure your key is unique.
             */
-            .get('cloud/hosted/todo/app/for/' + username + '/todo/items')
+            .get('cloud/hosted/todo/app/for/' + username + config.uniqueid)
             /* The `.set()` command will not be needed in gun version 0.3.0,
                but for versions prior to 0.3.0 (including the packaged 0.2.5),
                it is necessary to explicitly tell gun what to do if there is 
                no initial data at the specified key location.  `set()` tells 
                gun to initial an empty value.
             */
-            .set(); 
+            //.set(); 
 
   /* We're going to keep constant watch for any submissions 
      (e.g. 'on' events) to the 'todos' form 
@@ -87,7 +100,7 @@ function toDo() {
              /* We're going to add the list item to the end of 
                 (e.g. append it to) the unordered list of to do items 
              */
-             .appendTo('ul');
+             .appendTo('.todos ul');
     /* We're also going to use jquery to create a checkbox for each to do item
     */
     var checkbox = $('<input type="checkbox">')

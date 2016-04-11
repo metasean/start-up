@@ -37,31 +37,83 @@ html, body {
 	padding: 0;
 	font-size: 100%;
 }
-body {
-	display: flex;
-	flex-direction: column;
-	flex-wrap: nowrap;
-	justify-content: center;
-	height: 100vh;
-	width: 100vw;
-	min-width: 45em;
-	min-height: 35em;
-	overflow: hidden;
-}
-.text {
-	height: 40vh;
-	display: inline-flex;
-	flex-direction: row;
-	box-sizing: inherit;
-	align-content: stretch;
-	min-height: 60vh;
-}
-.text, .graphic, .stats, .wisdom, .todos {
-	flex: 1 1;
-}
 .stats, .wisdom, .todos {
 	padding: 0em;
 	margin: 0em;
+}
+
+
+@media (min-width: 949px) {
+
+	/* TODO: this approach is visually harsh; 
+	   would prefer an animated transition version
+	*/	
+
+	body {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		justify-content: center;
+		align-content: stretch;
+		height: 100vh;
+		width: 100vw;
+		overflow: hidden; 
+	}
+
+	.stats, .wisdom, .todos {
+		flex: 1 1 30%;
+		box-sizing: inherit;
+		max-height: 60vh; 
+	}
+	.graphic {
+		flex: 3 3 auto;
+	}
+
+	.stats   { order: 1; z-index: 1 }
+	.wisdom  { order: 2; z-index: 0 }
+	.todos   { order: 3; z-index: 1 }
+	.graphic { order: 4; z-index: 0 }
+}
+
+@media (max-width: 950px) {
+
+	/* TODO: this approach is visually harsh; 
+	   would prefer an animated transition version
+	*/
+
+	body {
+		display: flex;
+		flex-direction: column;
+		flex-wrap: nowrap;
+		justify-content: center;
+		align-items: stretch;
+		align-content: stretch;
+		width: calc(100vw - 0.75em);
+		overflow-x: hidden; 
+	}
+
+	/* Using a hover effect to show the "About" info.
+		Until there's a mobile friendly version, do NOT show the About link.
+		TODO: make more mobile friendly;
+	*/
+	.about a.anchor { display: none !important; }
+
+	.wisdom, .todos {
+		min-height: 25vh;
+	}
+
+	.todos ul#todo {
+		max-height: calc(45vh - 8em);
+	}
+
+	.graphic, .stats, .wisdom, .todos {
+		flex: 1 1 auto;
+	}
+
+	.todos   { order: 1; z-index: 1}
+	.wisdom  { order: 2; z-index: 1}
+	.graphic { order: 4; z-index: 0}
+	.stats   { order: 3; z-index: 1}
 }
 
 
@@ -70,9 +122,16 @@ body {
     STATS BLOCK
 *******************************************************************************/
 .stats {
-	width: calc(100% - 1em); /* https://css-tricks.com/a-couple-of-use-cases-for-calc/ */
-	font-size: 0.75em;
+/*	width: calc(100% - 1em); /* https://css-tricks.com/a-couple-of-use-cases-for-calc/ */
+	display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: space-between;
+	align-content: center;
+	text-align: center;
+	overflow-x: hidden; 
 }
+
 #date, #clock {
 	display: inline-block;
 	text-align: center;
@@ -81,8 +140,43 @@ body {
 	margin: 0 auto;
 }
 
-.stats iframe {
-  width:100%;
+.stats .links {
+	text-align: left;
+}
+
+/*
+	The `.about` hide/show functionality is based on :hover and adjacent siblings.
+	http://stackoverflow.com/a/5210074/4285306
+*/
+.about a.anchor { /* default, non-hover state */
+	display: block; text-align: center; 
+}
+
+.about:hover a.anchor:link,
+.about:hover a.anchor:visited,
+.about:hover a.anchor:hover,
+.about:hover a.anchor:active, 
+.about:hover a.anchor { 
+	color: #47342B; 
+	text-decoration: none;
+}
+
+.about div.details {  /* default, non-hover state */
+	display: none; 
+}
+
+.about a.anchor:hover + div.details,
+.about div.details:hover { display: block; }
+
+.stats .links p {
+	margin: auto 1.5em;
+}
+
+.stats #DDG { /* for duckduckgo search field */
+	display: block;
+	height: 3.75em;
+	width: 100%;
+	border: 0.75em transparent solid;
 }
 
 
@@ -113,11 +207,27 @@ body {
     TODOS BLOCK
 *******************************************************************************/
 .todos {
+	margin: 0 auto;
+	display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: space-between;
+	align-content: center;
 }
 
-ul#todo {
-  height: calc(100% - 6em); /* https://css-tricks.com/a-couple-of-use-cases-for-calc/ */
-  overflow: auto;
+.todos .heading, .todos form {
+	flex: 1 1 auto;
+}
+
+.todos ul#todo {
+	display: block; 
+	height: calc(100% - 6em); /* https://css-tricks.com/a-couple-of-use-cases-for-calc/ */
+	min-height: 7em;
+	flex: 2 2 auto;
+	overflow-y: auto;
+	width: calc(100% - 3em);
+	padding: 0 1em 0 1em;
+	margin: 0 1em 0 0;
 }
 
 
@@ -126,9 +236,8 @@ ul#todo {
     GRAPHICS BLOCK
 *******************************************************************************/
 .graphic {
-	max-height:40%;
-	position:relative;
 }
+
 img { /* possible alternative: http://addedoptimization.com/css-styling-image-height-and-width-while-maintaining-aspect-ratio/ */
 	height: 40vh; /* chrome is sorta okay with */
 	max-height: 100%;  /* firefox loves; does squat in chrome 
@@ -144,32 +253,4 @@ img { /* possible alternative: http://addedoptimization.com/css-styling-image-he
 	position: absolute;
 	top:0; bottom:0; left:0; right:0;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 

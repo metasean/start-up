@@ -1,13 +1,15 @@
 # What is this?
 
 This code generates a custom web browser default page, which can be used as is.
-*However*, the code has been modularized to make it easy for people who are learning front end development to replace or customize sections of code.
+*However*, the code has intentionally been modularized and commented to make it easy for people who are learning front end development to replace or customize sections of code.
+
+See http://metasean.gitlab.io/start-up (GitLab) and http://metasean.github.io/start-up (GitHub) for the live versions.
 
 # Getting Started
 
 Either fork or download the repo.
 
-Edit the files to your heart's content.  See the Customizing Your Start Page section below for details and guidance.  See the Inspiration section below for additional ideas and quotes.
+Edit the files to your heart's content.  See the [Customizing Your Start Page section](https://gitlab.com/metasean/start-up#customizing-your-start-page) below for details and guidance.  See the Inspiration section below for additional ideas and quotes.
 
 # Use in browsers
 
@@ -37,9 +39,27 @@ The index.html page can be viewed as is in a web browser, but to be used as a de
     d. "Options"  
 3. Set the Redirect URL value to your index.html page  
 
-# Use from gh-pages
+# Use from GitLab or GitHub
 
-If you're minimally comfortable with git, push your code to the 'gh-branch' (e.g. `git checkout -b gh-pages`, `git add .`, `git commit`, `git push origin gh-pages:gh-pages`), then you can access it from http(s)://\<username\>.github.io/\<projectname\> (e.g. https://MetaSean.github.io/start-up).
+You can fork this repo from within GitLab or GitHub.  
+
+## GitLab
+
+Then make your modifications, ensuring the 'master' branch is kept up-to-date.
+
+In GitLab, each time your GitLab repo is updated, the `.gitlab-ci.yml` script will automatically trigger a rebuild.
+
+Your customized page will be available at an address following the pattern:
+ - http://<username>.gitlab.io/start-up
+
+
+## GitHub
+
+Then make your modifications, ensuring the 'gh-pages' branch is kept up-to-date.
+
+Your customized page will be available at an address following the pattern:
+ - http://<username>.github.io/start-up
+
 
 
 # Customizing Your Start Page
@@ -136,11 +156,49 @@ The last thing this means is that you can't ever "delete" data (it's a constrain
  - http://lifehacker.com/5731409/the-sands-of-time-desktop / http://k3ttc4r.deviantart.com/art/startpage-rwrt-upd8-2011-04-18-105703135
 
  - Chrome's 
-   - Momentum - https://chrome.google.com/webstore/detail/momentum/laookkfknpbbblfpciffpaejjkokdgca
+  - Momentum - https://chrome.google.com/webstore/detail/momentum/laookkfknpbbblfpciffpaejjkokdgca
 
-   - Start - https://chrome.google.com/webstore/detail/start-a-better-new-tab/kgifkabikplflflabkllnpidlbjjpgbp
+  - Start - https://chrome.google.com/webstore/detail/start-a-better-new-tab/kgifkabikplflflabkllnpidlbjjpgbp
 
 
+## Images
+
+https://pexels.com/ - Best free stock photos in one place.
+ - https://www.pexels.com/photo/clock-alarm-clock-clock-pointers-close-up-30641/
+ - https://www.pexels.com/photo/sea-ocean-bridge-cloudy-36365/
+
+http://librestock.com/ - search the best free stock photo websites in one place
+
+http://alana.io/ - Free Stock Photos
+
+http://finda.photo/ - Search through thousands of free (CC0 licensed) stock photos
+
+https://pixabay.com/ - Free images and videos you can use anywhere
+
+https://unsplash.com/ - Free (do whatever you want) high-resolution photos.
+10 new photos every 10 days.
+
+Some that Sean is considering:
+ - https://unsplash.com/photos/Sfn8f32ZIj0
+
+ - https://unsplash.com/photos/awnHOXjsdT4
+ - https://unsplash.com/photos/E9CrQou9K0Y
+
+ - https://unsplash.com/photos/jLwVAUtLOAQ
+
+ - https://unsplash.com/photos/p62O--o1x-U
+ - https://unsplash.com/photos/uivWDK2Ifrg
+ - https://unsplash.com/photos/NbUokuw0BQI
+
+ - https://unsplash.com/photos/cVEfUcl6xCo
+ - https://unsplash.com/photos/CNzh2A9_jwE
+ - https://unsplash.com/photos/Ki0dpxd3LGc
+ - https://unsplash.com/photos/xorjaMB8W70
+ - https://unsplash.com/photos/eOpewngf68w
+ - https://unsplash.com/photos/CoD2Q92UaEg
+ - https://unsplash.com/photos/OWwK_0_EnxY
+ - https://unsplash.com/photos/6LkxufmApSk
+ - https://unsplash.com/photos/lpjb_UMOyx8
 
 ## Quotes
 

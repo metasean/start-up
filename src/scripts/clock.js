@@ -34,11 +34,11 @@ function renderClock() {
 	
 	/* once time is shown, reduce the update frequency */
 	if (currentTime) { 
-		startUp.config.clockTimeout = 3000; 
+		config.clockTimeout = 3000; 
 	}
 
 	/* use setTimout and the startUp.config.clockTimeout to run renderClock again at the appropriate time */
-	setTimeout (renderClock, startUp.config.clockTimeout);
+	setTimeout (renderClock, config.clockTimeout);
 }
 
 renderClock();

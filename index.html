@@ -9,33 +9,20 @@
     <!-- meta tag that sets the character set to utf-8 -->
     <meta charset="utf-8">
     <!-- link tags that pull in our stylesheets -->
-    <link rel="stylesheet" href="styles/layout.css" />
-    <link rel="stylesheet" href="styles/typography.css" />
-    <link rel="stylesheet" href="styles/colors.css" />
+    <link rel="stylesheet" href="src/styles/layout.css" />
+    <link rel="stylesheet" href="src/styles/typography.css" />
+    <link rel="stylesheet" href="src/styles/colors.css" />
     <!--
         INITIAL SCRIPTS
     -->
     <!-- jquery is used throughout this page and the toDo.js script -->
     <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
-    <!-- the anonymous script sets up initial variables -->
+    <!-- the config script sets up some initial variables -->
+    <script src="src/scripts/config.js"></script>
     <script type="text/javascript">
-      var startUp = {
-        /* 
-        The `config` object holds configuration variables.
-        - `clockTimeout` is an initial refresh rate for the clock.js script, which
-          is overwritten once the date and time have been established.
-        - `user` is the name to show in the To Do List header
-        - `title` is the page title and will show up on the browser tab
-        */
-        config: {
-          clockTimeout: 10,
-          user: "MetaSean",
-          title: "Think Less ~ Do More"
-        }
-      };
-      /* the `$(document).ready` function sets the documents 'title' meta property to the startUp.config.title variable once the document has been loaded. */ 
+      /* the `$(document).ready` function sets the document's 'title' meta property to the startUp.config.title variable once the document has been loaded. */ 
       $(document).ready(function() {
-        document.title = startUp.config.title;
+        document.title = config.title;
       });
     </script>
     <!-- the gun.js script is used in the toDo.js script 
@@ -48,21 +35,48 @@
     -->
     <!--script src="https://cdn.rawgit.com/amark/gun/master/gun.js"></script-->
     <!--script src="https://cdn.rawgit.com/amark/gun/3240ab882637643305250873c46cd52b0e7620f4/gun.js"></script-->
-    <script src="lib/gun.js"></script>
+    <script src="src/lib/gun.js"></script>
   </head>
 
   <!-- when the html body is loaded, it automatically places the cursor into (e.g. focuses on) the DuckDuckGo (DDG) search bar. -->
-  <body onload="document.getElementById(DDG).focus();">
-    <div class="text">
+  <body> <!-- onload="document.getElementById(DDG).focus();"> -->
+    <!--div class="text"-->
       <span class="stats">
         <!--
             DATE & TIME
             depends on:
              - clock.js
         -->
-        <div id="date"></div>
-        <div id="clock"></div>
-        <div class="hr">~~~~~~~~~~</div>
+        <div>
+          <div id="date"></div>
+          <div id="clock"></div>
+          <div class="hr">~~~~~~~~~~</div>
+          <div class="links">
+
+            <!--
+                http://stackoverflow.com/a/5210074/4285306
+            -->
+            <div class="about">
+              <a class="anchor" href="#">About</a>
+              <div class="details">
+                <p>This is starter page for web dev learners at various stages of their journeys.</p><p>&nbsp;</p>
+                <p>Fork the code on <a href="https://githubb.com/metasean/start-up">GitHub</a> or <a href="https://gitlab.com/metasean/start-up">GitLab</a>, then challenge yourself to modify or replicate functionality.  For example, delete the <code>typography.css</code> file, then create your own.  There are many notes and references within the existing codebase for reference.</p><p>&nbsp;</p>
+                <p>If you're just starting off, I recommend checking out the listed resources.</p>
+              </div>
+            </div> 
+
+            
+            <ul>
+              <li><a href="http://www.freecodecamp.com/">Free Code Camp</a></li>
+              <li><a href="https://developer.mozilla.org/en-US/">Mozilla Developer Network</a></li>
+              <li><a href="https://flukeout.github.io/">CSS Diner</a></li>
+              <li><a href="https://css-tricks.com/snippets/css/">CSS-Tricks: CSS Snippets</a></li>
+              <li><a href="http://flexboxfroggy.com/">Flexbox Froggy</a></li>
+              <li><a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/">CSS-Tricks: A Guide to Flexbox</a></li>
+              <li><a href="https://metasean.github.io/blog">MetaSean's Blog</a></li>
+            </ul>
+          </div>
+        </div>
         <!--
             SEARCH
         
@@ -71,13 +85,13 @@
             customize: http://hardik.org/2013/06/01/stylising-duckduckgo-site-search/ 
             position? : https://css-tricks.com/float-center/  
         -->
-        <iframe frameborder="0" name="DDG" style="overflow:hidden;margin:0;padding:0" src="https://duckduckgo.com/search.html?focus=yes"></iframe>
+        <iframe frameborder="0" name="DDG" id="DDG" style="overflow:hidden;margin:0;padding:0" src="https://duckduckgo.com/search.html?focus=yes"></iframe>
       </span>
       <h1 class="wisdom">
         <!--
             QUOTE THING
 
-            Two styled quotes are provided below.  Comment out any quotes that aren't being used. There are also a bunch of unstyled quotes in the README file.
+            A few styled quotes are provided below.  Comment out any quotes that aren't being used. There are also a bunch of unstyled quotes in the README file.
 
             Challenge: 
             Move your quotes to a JSON file and import a random quote on refresh.
@@ -85,7 +99,7 @@
         <!-- 
               Success means Actively taking Steps Large or Small toward your Desired Goal 
         -->
-        <span class="quote plain"></span>
+<!--         <span class="quote plain"></span>
         <span class="quote emphasis invert">Success</span>
         <span class="quote plain">means</span>
         <span class="quote emphasis">Actively</span>
@@ -96,6 +110,20 @@
         <span class="quote emphasis invert">Desired</span>
         <span class="quote emphasis">Goal</span>
         <span class="quote author">MetaSean</span>
+        <span class="quote plain"></span> -->
+
+        <!-- 
+              Success Is The Sum of Small Efforts Repeated Day In And Day Out - Robert Collier 
+        -->
+        <span class="quote plain"></span>
+        <span class="quote emphasis invert blueish">Success</span>
+        <span class="quote plain">is the</span>
+        <span class="quote emphasis">Sum</span>
+        <span class="quote plain">of</span>
+        <span class="quote sub-emphasis redish">Small Efforts</span>
+        <span class="quote emphasis invert">Repeated</span>
+        <span class="quote emphasis orangish">Day In and Day Out</span>
+        <span class="quote author">Robert Collier</span>
         <span class="quote plain"></span>
 
       <!-- 
@@ -120,22 +148,24 @@
              - gun.js
              - toDo.js
         -->
-        <h1></h1>
-        <div class="hr">~~~~~~~~~~</div>
+        <div class="heading">
+          <h1 onClick="config.ask();"> </h1>
+          <div class="hr">~~~~~~~~~~</div>
+        </div>
         <ul id="todo"></ul>
         <form>
-          <input type="text" placeholder="click to add a new To Do item" />
+          <input type="text" placeholder='click here, type in task, press "Enter"' />
         </form>
       </span>
-    </div>
-    <div class="graphic">
+    <!--/div-->
+    <span class="graphic">
       <!--
             IMAGE - can pull from local or remote locations
         -->
       <!-- image information available at https://en.wikipedia.org/wiki/Japanese_garden#/media/File:Geppa-ro.jpg -->
       <!--<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Geppa-ro.jpg/1280px-Geppa-ro.jpg" /-->
-      <img src="images/wikimedia/1024px-Geppa-ro.jpg">
-    </div>
+      <img src="src/images/wikimedia/1024px-Geppa-ro.jpg">
+    </span>
 
     <!--
         POST-PAGE LOAD SCRIPTS
@@ -152,11 +182,11 @@
     <link href="https://fonts.googleapis.com/css?family=Special+Elite|Poller+One|Coustard|Walter+Turncoat|Short+Stack|Marck+Script|Playfair+Display:400,700italic,400italic,700,900,900italic|Cantarell:400,400italic,700,700italic|IM+Fell+English:400,400italic|Sonsie+One|Libre+Baskerville:400,400italic,700" type="text/css" rel="stylesheet" />
 
     <!-- 
-
-    to have the clock correctly load and to have the user name be shown, the following scripts must be called after the clock and time divs and the todos h1 span are declared in the DOM 
+    To have the clock correctly load and to have the user name be shown, the following scripts must be called after the clock and time divs and the todos h1 span are declared in the DOM.
     -->
-    <script src="scripts/clock.js"></script>
-    <script src="scripts/toDo.js"></script>
+    <script src="src/scripts/clock.js"></script>
+    <script src="src/scripts/toDo.js"></script>
+
   </body>
 
 </html>

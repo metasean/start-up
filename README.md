@@ -1,7 +1,9 @@
 # What is this?
 
 This code generates a custom web browser default page, which can be used as is.
-*However*, the code has been influentially modularized and commented to make it easy for people who are learning front end development to replace or customize sections of code.
+*However*, the code has intentionally been modularized and commented to make it easy for people who are learning front end development to replace or customize sections of code.
+
+See http://metasean.gitlab.io/start-up (GitLab) and http://metasean.github.io/start-up (GitHub) for the live versions.
 
 # Getting Started
 

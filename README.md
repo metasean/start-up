@@ -1,13 +1,13 @@
 # What is this?
 
 This code generates a custom web browser default page, which can be used as is.
-*However*, the code has been modularized to make it easy for people who are learning front end development to replace or customize sections of code.
+*However*, the code has been influentially modularized and commented to make it easy for people who are learning front end development to replace or customize sections of code.
 
 # Getting Started
 
 Either fork or download the repo.
 
-Edit the files to your heart's content.  See the Customizing Your Start Page section below for details and guidance.  See the Inspiration section below for additional ideas and quotes.
+Edit the files to your heart's content.  See the [Customizing Your Start Page section](https://gitlab.com/metasean/start-up#customizing-your-start-page) below for details and guidance.  See the Inspiration section below for additional ideas and quotes.
 
 # Use in browsers
 
@@ -37,17 +37,17 @@ The index.html page can be viewed as is in a web browser, but to be used as a de
     d. "Options"  
 3. Set the Redirect URL value to your index.html page  
 
-# Use from GitLab
+# Use from GitLab or GitHub
 
-You can fork this repo from within GitLab.  
-
-In your forked repo, navigate to Settings -> Variables and add the following two keys with the values you would like:  
- - START_PAGE_USER
- - START_PAGE_ID
+You can fork this repo from within GitLab or GitHub.  
 
 Then make your modifications, ensuring the 'master' branch is kept up-to-date.
 
-Each time your GitLab repo is updated, the `.gitlab-ci.yml` script will automatically trigger a rebuild.
+In GitLab, each time your GitLab repo is updated, the `.gitlab-ci.yml` script will automatically trigger a rebuild.
+
+Your customized page will be available at an address following the pattern:
+ - http://<username>.gitlab.io/start-up
+ - http://<username>.github.io/start-up
 
 
 
@@ -145,9 +145,9 @@ The last thing this means is that you can't ever "delete" data (it's a constrain
  - http://lifehacker.com/5731409/the-sands-of-time-desktop / http://k3ttc4r.deviantart.com/art/startpage-rwrt-upd8-2011-04-18-105703135
 
  - Chrome's 
-   - Momentum - https://chrome.google.com/webstore/detail/momentum/laookkfknpbbblfpciffpaejjkokdgca
+  - Momentum - https://chrome.google.com/webstore/detail/momentum/laookkfknpbbblfpciffpaejjkokdgca
 
-   - Start - https://chrome.google.com/webstore/detail/start-a-better-new-tab/kgifkabikplflflabkllnpidlbjjpgbp
+  - Start - https://chrome.google.com/webstore/detail/start-a-better-new-tab/kgifkabikplflflabkllnpidlbjjpgbp
 
 
 ## Images

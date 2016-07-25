@@ -50,7 +50,7 @@ Then make your modifications, ensuring the 'master' branch is kept up-to-date.
 In GitLab, each time your GitLab repo is updated, the `.gitlab-ci.yml` script will automatically trigger a rebuild.
 
 Your customized page will be available at an address following the pattern:
- - http://<username>.gitlab.io/start-up
+ - http://_username_.gitlab.io/start-up
 
 
 ## GitHub
@@ -58,7 +58,7 @@ Your customized page will be available at an address following the pattern:
 Then make your modifications, ensuring the 'gh-pages' branch is kept up-to-date.
 
 Your customized page will be available at an address following the pattern:
- - http://<username>.github.io/start-up
+ - http://_username_.github.io/start-up
 
 
 
